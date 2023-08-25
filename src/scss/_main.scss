@@ -1,0 +1,193 @@
+body {
+  margin: 0;
+  background-color: $body-bg;
+  color: $text-color;
+  font-size: 18px;
+  font-family: $font-family;
+
+  * {
+    box-sizing: border-box;
+    transition: .3s;
+  }
+
+  #root {
+    max-width: 1440px;
+    padding: 0 20px;
+    margin: 0 auto;
+
+    .flex {
+      display: flex;
+    }
+
+    .grid {
+      display: grid;
+
+      &.cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      &.cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      &.cols-4 {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      &.md-cols-2 {
+        @include breakpoint(md) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      &.md-cols-3 {
+        @include breakpoint(md) {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      &.md-cols-4 {
+        @include breakpoint(md) {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+
+      &.lg-cols-2 {
+        @include breakpoint(lg) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      &.lg-cols-3 {
+        @include breakpoint(lg) {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      &.lg-cols-4 {
+        @include breakpoint(lg) {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+
+      &.xl-cols-2 {
+        @include breakpoint(xl) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      &.xl-cols-3 {
+        @include breakpoint(xl) {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      &.xl-cols-4 {
+        @include breakpoint(xl) {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+    }
+
+    .justify-between {
+      justify-content: space-between;
+    }
+
+    .items-center {
+      align-items: center;
+    }
+
+    .gap-10 {
+      gap: 10px;
+    }
+
+    .gap-20 {
+      gap: 20px;
+    }
+
+    .gap-50 {
+      gap: 50px;
+    }
+
+    a {
+      text-decoration: none;
+      color: $primary-color;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    button {
+      cursor: pointer;
+      color: $primary-color;
+      background: transparent;
+      border: 2px solid $primary-color;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      padding: 10px 20px;
+
+      &:hover {
+        background: $primary-color;
+        color: $text-color;
+      }
+
+      &.danger {
+        color: red;
+        border-color: red;
+
+        &:hover {
+          background: red;
+          color: $text-color;
+        }
+      }
+    }
+  }
+
+  table {
+    width: 100%;
+    text-align: left;
+    border: 1px solid #fff;
+    border-collapse: collapse;
+
+    tr {
+      border-top: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+
+      td, th {
+        padding: 10px;
+      }
+    }
+  }
+
+  .qty-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .qty {
+      display: inline-block;
+      border: 2px solid $primary-color;
+      border-radius: 4px;
+      padding: 7px 10px;
+    }
+  }
+
+  .mb-5{
+    margin-bottom: 5em;
+  }
+
+  .cart-totals-wrapper{
+    text-align: right;
+
+    .total-amount {
+      margin-right: auto;
+      border-bottom: 2px solid $primary-color;
+    }
+  }
+}
